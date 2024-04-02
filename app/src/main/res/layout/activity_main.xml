@@ -1,71 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/welcome_bg">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Crazy  Moly"
-        android:textSize="50dp"
-        android:layout_x="150dp"
-        android:layout_y="100dp"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/exit"
-        android:text="退出"
-        android:textSize="20dp"
-        android:textColor="@color/colorAccent"
-        style="?android:attr/buttonBarButtonStyle"
-        android:layout_x="500dp"
-        android:layout_y="250dp"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/welcome_bg"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_easy"
-        android:text="简单模式"
-        android:textSize="20dp"
-        android:textColor="@color/colorAccent"
-        style="?android:attr/buttonBarButtonStyle"
-        android:layout_x="10dp"
-        android:layout_y="250dp"/>
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="打地鼠"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_hard"
-        android:text="困难模式"
-        android:textSize="20dp"
-        android:textColor="@color/colorAccent"
-        style="?android:attr/buttonBarButtonStyle"
-        android:layout_x="150dp"
-        android:layout_y="250dp"/>
+        <Button
+            android:id="@+id/exit"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="退出"
+            android:textColor="@color/colorAccent"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
 
-    <CheckBox
-        android:text="静音"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_width="74dp"
-        android:layout_height="43dp"
-        android:layout_x="306dp"
-        android:layout_y="250dp"
-        android:id="@+id/cb_music" />
+        <Button
+            android:id="@+id/btn_easy"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="简单模式"
+            android:textColor="@color/colorAccent"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/exit" />
 
-    <TextView
-        android:text="最高成就："
-        android:textSize="20dp"
-        android:layout_width="wrap_content"
-        android:textColor="@color/colorAccent"
-        android:layout_height="31dp"
-        android:layout_x="47dp"
-        android:layout_y="204dp"
-        android:id="@+id/goal" />
-</AbsoluteLayout>
+        <Button
+            android:id="@+id/btn_hard"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="困难模式"
+            android:textColor="@color/colorAccent"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_easy" />
+
+        <CheckBox
+            android:id="@+id/cb_music"
+            android:layout_width="74dp"
+            android:layout_height="43dp"
+            android:text="静音"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_hard" />
+
+        <TextView
+            android:id="@+id/goal"
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            android:text="最高成就："
+            android:textColor="@color/colorAccent"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb_music" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
